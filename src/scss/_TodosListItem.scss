@@ -1,0 +1,102 @@
+@use "./colors" as *;
+.todos-list-item {
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    gap: 1.5rem;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    color: $light;
+    border-bottom: 1px solid $mutedLight;
+    animation: fadeIn 0.5s ease-in-out;
+    .delete {
+        animation: fadeOut 0.5s ease-in-out;
+    }
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    @keyframes fadeOut {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+    .checkbox-wrapper {
+        .checkbox {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            width: 1.5rem;
+            height: 1.5rem;
+            border: 1px solid $mutedLight;
+            border-radius: 50%;
+            outline: none;
+            cursor: pointer;
+            &:checked {
+                background-color: transparent;
+            }
+
+            &::before {
+                content: ""; 
+                display: block;
+                width: 1.5rem; 
+                height: 1.5rem; 
+                background: $radial-gradient; 
+                border-radius: 50%; 
+                position: relative;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) scale(0); 
+                transition: transform 0.3s ease-in-out; 
+            }
+
+            &:checked::before {
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+    }
+    .info-wrapper {
+        .title {
+            font-size: 1.2rem;
+            margin-bottom: .5rem;
+            text-transform: capitalize;
+        }
+        .author-date-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            .author {
+                font-size: .9rem;
+                text-transform: capitalize;
+            }
+            .date {
+                font-size: .8rem;
+            }
+        }
+    }
+    .btns-wrapper {
+        display: flex;
+        flex-direction: column;
+        .move-up-btn, .move-down-btn, .edit-btn, .delete-btn {
+            font-size: 1.7rem;
+            padding: .5rem;
+            cursor: pointer;
+        }
+    }
+
+}
+
+.completed {
+    opacity: .5;
+    text-decoration: line-through;
+}
+
+.ready-to-delete {
+    color: $danger;
+}

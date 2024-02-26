@@ -1,0 +1,17 @@
+@use './colors' as *;
+.header {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    .title {
+        font-size: 3.0rem;
+        margin: 1.5rem 0;
+        color: $light;
+    }
+    .logo-container {
+        max-width: 50px;
+        .logo {
+            width: 100%;
+        }
+    }
+}

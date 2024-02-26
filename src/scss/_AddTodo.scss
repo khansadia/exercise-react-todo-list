@@ -1,0 +1,73 @@
+@use './colors' as *;
+
+.add-todo {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    margin-bottom: 1.5rem;
+    .wrapper {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        .title, .datepicker, .author, .add-btn {
+            background-color: $primary;
+            padding: 1rem;
+            color: $light;
+            border: none;
+            outline: none;
+            font-size: 1rem;
+        }
+        .datepicker {
+            text-align: center;
+            cursor: pointer;
+            width: 100%;
+            background-color: $danger;
+        }
+        .react-datepicker__header {
+            text-align: center;
+            background-color: $primary;
+            border-bottom: 0px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            padding-top: 8px;
+            position: relative;
+            .react-datepicker__day-name, .react-datepicker__current-month{
+                color: $light;
+            }
+        }
+
+        .react-datepicker__day--selected{
+            background: $primary;
+        }
+        
+        .react-datepicker__today-button {
+            background: $primary;
+            border-top: 0px;
+            cursor: pointer;
+            text-align: center;
+            font-weight: bold;
+            padding: 5px 0;
+            clear: left;
+        }
+        .react-datepicker {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 0.8rem;
+            background: $linear-gradient;
+            color: $mutedLight;
+            border: 0px;
+            border-radius: 0;
+            display: inline-block;
+            position: relative;
+        }
+        .add-btn {
+            background: #4d83ee;
+            cursor: pointer;
+        }
+    }
+}
+
+@media screen and (max-width: 768px){
+    .add-todo {
+        .wrapper {
+            grid-template-columns: 1fr;
+        }
+    }
+}

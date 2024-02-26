@@ -1,0 +1,12 @@
+@use './colors' as *;
+
+.app {
+    .gradient-bg {
+        background:$linear-gradient;
+         
+    }
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+}
