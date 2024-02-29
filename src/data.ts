@@ -2,7 +2,7 @@ export const data = [
   {
     id: 1,
     author: "Adan",
-    title: "Do weekly Grocerry",
+    title: "Go for weekly Grocerry",
     date: new Date().toDateString(),
     completed: false,
   },
