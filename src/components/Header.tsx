@@ -5,7 +5,7 @@ const Header = () => {
       <div className="logo-container">
         <img src={logo} alt="Todo-icon" className="logo" />
       </div>
-      <h1 className="title">TO DO</h1>
+      <h1 className="title">My To Do List</h1>
     </div>
   );
 }

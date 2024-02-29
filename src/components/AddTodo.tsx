@@ -48,7 +48,7 @@ const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
         </div>
         <div className="wrapper">
           <input className="author" type="text" placeholder="Enter the Author of Todo.." value={author} onChange={onChangeAuthor}/>
-          <button type="submit" className="add-btn">ADD</button>
+          <button type="submit" className="add-btn">Add New Todo</button>
         </div>
     </form>
   )
